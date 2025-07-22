@@ -1,3 +1,5 @@
+Hello
+<<<<<<< HEAD
 # JMeter HTML Report Backend Listener
 
 🎉 **SUCCESS!** A simple, working JMeter Backend Listener that generates beautiful HTML reports.
@@ -132,3 +134,6 @@ This plugin is **immediately usable** and follows the same pattern as profession
 - Grafana/Loki Listeners
 
 **Total development time:** Fresh start to working plugin in under 30 minutes! 🚀 
+=======
+# supermeter
+>>>>>>> 8db36d4d92f40495b6ece673392bc71d7c09c59d
