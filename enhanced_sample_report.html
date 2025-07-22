@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JMeter Enhanced Test Report</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.header h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.metric-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.metric-card .value {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.metric-card .label {
+  color: #7f8c8d;
+  font-size: 1.1em;
+}
+.success { color: #27ae60; }
+.warning { color: #f39c12; }
+.error { color: #e74c3c; }
+.info { color: #3498db; }
+.table-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.data-table th {
+  background: #3498db;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+.data-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+.data-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+.status-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.status-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.section-title {
+  color: #2c3e50;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+<div class="header">
+  <h1>JMeter Enhanced Test Report</h1>
+  <div class="subtitle">Generated on 2025-07-09 17:45:30</div>
+  <div class="subtitle">Test Duration: 5m 0s</div>
+</div>
+<div class="summary-grid">
+  <div class="metric-card">
+    <div class="value info">1,000</div>
+    <div class="label">Total Samples</div>
+  </div>
+  <div class="metric-card">
+    <div class="value warning">1061.13 ms</div>
+    <div class="label">Avg Response Time</div>
+  </div>
+  <div class="metric-card">
+    <div class="value warning">3.33/sec</div>
+    <div class="label">Throughput</div>
+  </div>
+  <div class="metric-card">
+    <div class="value error">7.9%</div>
+    <div class="label">Error Rate</div>
+  </div>
+</div>
+<div class="table-section">
+  <h2 class="section-title">Detailed Statistics</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Request Label</th>
+        <th>Samples</th>
+        <th>Average (ms)</th>
+        <th>Min (ms)</th>
+        <th>Max (ms)</th>
+        <th>Error %</th>
+        <th>Throughput/sec</th>
+        <th>KB/sec</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Search API</strong></td>
+        <td>198</td>
+        <td>1052.95</td>
+        <td>53</td>
+        <td>2042</td>
+        <td>7.58</td>
+        <td>2444.44</td>
+        <td>14597.67</td>
+      </tr>
+      <tr>
+        <td><strong>Checkout</strong></td>
+        <td>180</td>
+        <td>1109.62</td>
+        <td>97</td>
+        <td>2040</td>
+        <td>8.89</td>
+        <td>2168.67</td>
+        <td>13062.58</td>
+      </tr>
+      <tr>
+        <td><strong>Payment Gateway</strong></td>
+        <td>213</td>
+        <td>1121.16</td>
+        <td>60</td>
+        <td>2045</td>
+        <td>8.45</td>
+        <td>2535.71</td>
+        <td>14795.69</td>
+      </tr>
+      <tr>
+        <td><strong>Login</strong></td>
+        <td>220</td>
+        <td>1064.92</td>
+        <td>83</td>
+        <td>2049</td>
+        <td>7.27</td>
+        <td>2682.93</td>
+        <td>15597.69</td>
+      </tr>
+      <tr>
+        <td><strong>Home Page</strong></td>
+        <td>189</td>
+        <td>951.43</td>
+        <td>50</td>
+        <td>2046</td>
+        <td>7.41</td>
+        <td>2250</td>
+        <td>12566.28</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="table-section">
+  <h2 class="section-title">Individual Results (Last 100)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Label</th>
+        <th>Response Time</th>
+        <th>Status</th>
+        <th>Response Code</th>
+        <th>Bytes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>17:45:00.468</td>
+        <td>Payment Gateway</td>
+        <td>1033 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,002</td>
+      </tr>
+      <tr>
+        <td>17:45:00.768</td>
+        <td>Login</td>
+        <td>184 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,462</td>
+      </tr>
+      <tr>
+        <td>17:45:01.068</td>
+        <td>Payment Gateway</td>
+        <td>1297 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>500</td>
+        <td>3,357</td>
+      </tr>
+      <tr>
+        <td>17:45:01.368</td>
+        <td>Home Page</td>
+        <td>355 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>11,206</td>
+      </tr>
+      <tr>
+        <td>17:45:01.668</td>
+        <td>Search API</td>
+        <td>989 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>201</td>
+        <td>9,190</td>
+      </tr>
+      <tr>
+        <td>17:45:01.968</td>
+        <td>Login</td>
+        <td>892 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,208</td>
+      </tr>
+      <tr>
+        <td>17:45:02.268</td>
+        <td>Checkout</td>
+        <td>1474 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>1,643</td>
+      </tr>
+      <tr>
+        <td>17:45:02.568</td>
+        <td>Login</td>
+        <td>579 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>10,178</td>
+      </tr>
+      <tr>
+        <td>17:45:02.868</td>
+        <td>Checkout</td>
+        <td>246 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,045</td>
+      </tr>
+      <tr>
+        <td>17:45:03.168</td>
+        <td>Home Page</td>
+        <td>1120 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,743</td>
+      </tr>
+      <tr>
+        <td>17:45:03.468</td>
+        <td>Login</td>
+        <td>833 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,388</td>
+      </tr>
+      <tr>
+        <td>17:45:03.768</td>
+        <td>Payment Gateway</td>
+        <td>1758 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>10,757</td>
+      </tr>
+      <tr>
+        <td>17:45:04.068</td>
+        <td>Search API</td>
+        <td>967 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,386</td>
+      </tr>
+      <tr>
+        <td>17:45:04.368</td>
+        <td>Search API</td>
+        <td>1269 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,562</td>
+      </tr>
+      <tr>
+        <td>17:45:04.668</td>
+        <td>Login</td>
+        <td>1394 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,018</td>
+      </tr>
+      <tr>
+        <td>17:45:04.968</td>
+        <td>Checkout</td>
+        <td>148 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,864</td>
+      </tr>
+      <tr>
+        <td>17:45:05.268</td>
+        <td>Home Page</td>
+        <td>1943 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,362</td>
+      </tr>
+      <tr>
+        <td>17:45:05.568</td>
+        <td>Payment Gateway</td>
+        <td>1078 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,336</td>
+      </tr>
+      <tr>
+        <td>17:45:05.868</td>
+        <td>Checkout</td>
+        <td>1606 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>10,099</td>
+      </tr>
+      <tr>
+        <td>17:45:06.168</td>
+        <td>Home Page</td>
+        <td>1519 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,864</td>
+      </tr>
+      <tr>
+        <td>17:45:06.468</td>
+        <td>Home Page</td>
+        <td>440 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,709</td>
+      </tr>
+      <tr>
+        <td>17:45:06.768</td>
+        <td>Checkout</td>
+        <td>846 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,207</td>
+      </tr>
+      <tr>
+        <td>17:45:07.068</td>
+        <td>Checkout</td>
+        <td>1217 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,990</td>
+      </tr>
+      <tr>
+        <td>17:45:07.368</td>
+        <td>Home Page</td>
+        <td>91 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,901</td>
+      </tr>
+      <tr>
+        <td>17:45:07.668</td>
+        <td>Home Page</td>
+        <td>333 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,777</td>
+      </tr>
+      <tr>
+        <td>17:45:07.968</td>
+        <td>Login</td>
+        <td>2023 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,310</td>
+      </tr>
+      <tr>
+        <td>17:45:08.268</td>
+        <td>Search API</td>
+        <td>996 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,745</td>
+      </tr>
+      <tr>
+        <td>17:45:08.568</td>
+        <td>Home Page</td>
+        <td>864 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,757</td>
+      </tr>
+      <tr>
+        <td>17:45:08.868</td>
+        <td>Checkout</td>
+        <td>1911 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>1,549</td>
+      </tr>
+      <tr>
+        <td>17:45:09.168</td>
+        <td>Payment Gateway</td>
+        <td>444 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,915</td>
+      </tr>
+      <tr>
+        <td>17:45:09.468</td>
+        <td>Search API</td>
+        <td>2002 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,019</td>
+      </tr>
+      <tr>
+        <td>17:45:09.768</td>
+        <td>Search API</td>
+        <td>1434 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,703</td>
+      </tr>
+      <tr>
+        <td>17:45:10.068</td>
+        <td>Search API</td>
+        <td>1514 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,247</td>
+      </tr>
+      <tr>
+        <td>17:45:10.368</td>
+        <td>Payment Gateway</td>
+        <td>1638 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,620</td>
+      </tr>
+      <tr>
+        <td>17:45:10.668</td>
+        <td>Checkout</td>
+        <td>1774 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,162</td>
+      </tr>
+      <tr>
+        <td>17:45:10.968</td>
+        <td>Home Page</td>
+        <td>596 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>1,648</td>
+      </tr>
+      <tr>
+        <td>17:45:11.268</td>
+        <td>Payment Gateway</td>
+        <td>1880 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,717</td>
+      </tr>
+      <tr>
+        <td>17:45:11.568</td>
+        <td>Login</td>
+        <td>930 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,825</td>
+      </tr>
+      <tr>
+        <td>17:45:11.868</td>
+        <td>Login</td>
+        <td>1499 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>400</td>
+        <td>9,680</td>
+      </tr>
+      <tr>
+        <td>17:45:12.168</td>
+        <td>Payment Gateway</td>
+        <td>475 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,004</td>
+      </tr>
+      <tr>
+        <td>17:45:12.468</td>
+        <td>Search API</td>
+        <td>1547 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>1,586</td>
+      </tr>
+      <tr>
+        <td>17:45:12.768</td>
+        <td>Search API</td>
+        <td>1671 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,126</td>
+      </tr>
+      <tr>
+        <td>17:45:13.068</td>
+        <td>Payment Gateway</td>
+        <td>1997 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,473</td>
+      </tr>
+      <tr>
+        <td>17:45:13.368</td>
+        <td>Search API</td>
+        <td>873 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>1,459</td>
+      </tr>
+      <tr>
+        <td>17:45:13.668</td>
+        <td>Login</td>
+        <td>1012 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,289</td>
+      </tr>
+      <tr>
+        <td>17:45:13.968</td>
+        <td>Payment Gateway</td>
+        <td>452 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>10,298</td>
+      </tr>
+      <tr>
+        <td>17:45:14.268</td>
+        <td>Search API</td>
+        <td>1441 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,819</td>
+      </tr>
+      <tr>
+        <td>17:45:14.568</td>
+        <td>Login</td>
+        <td>87 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,794</td>
+      </tr>
+      <tr>
+        <td>17:45:14.868</td>
+        <td>Search API</td>
+        <td>423 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,920</td>
+      </tr>
+      <tr>
+        <td>17:45:15.168</td>
+        <td>Checkout</td>
+        <td>744 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,952</td>
+      </tr>
+      <tr>
+        <td>17:45:15.468</td>
+        <td>Search API</td>
+        <td>1931 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>400</td>
+        <td>1,381</td>
+      </tr>
+      <tr>
+        <td>17:45:15.768</td>
+        <td>Checkout</td>
+        <td>776 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,062</td>
+      </tr>
+      <tr>
+        <td>17:45:16.068</td>
+        <td>Payment Gateway</td>
+        <td>1312 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,725</td>
+      </tr>
+      <tr>
+        <td>17:45:16.368</td>
+        <td>Payment Gateway</td>
+        <td>447 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,006</td>
+      </tr>
+      <tr>
+        <td>17:45:16.668</td>
+        <td>Login</td>
+        <td>1338 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,417</td>
+      </tr>
+      <tr>
+        <td>17:45:16.968</td>
+        <td>Home Page</td>
+        <td>314 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,352</td>
+      </tr>
+      <tr>
+        <td>17:45:17.268</td>
+        <td>Checkout</td>
+        <td>998 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,977</td>
+      </tr>
+      <tr>
+        <td>17:45:17.568</td>
+        <td>Payment Gateway</td>
+        <td>1677 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,065</td>
+      </tr>
+      <tr>
+        <td>17:45:17.868</td>
+        <td>Payment Gateway</td>
+        <td>850 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,947</td>
+      </tr>
+      <tr>
+        <td>17:45:18.168</td>
+        <td>Checkout</td>
+        <td>1364 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,716</td>
+      </tr>
+      <tr>
+        <td>17:45:18.468</td>
+        <td>Search API</td>
+        <td>2040 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>500</td>
+        <td>5,169</td>
+      </tr>
+      <tr>
+        <td>17:45:18.768</td>
+        <td>Login</td>
+        <td>1087 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,417</td>
+      </tr>
+      <tr>
+        <td>17:45:19.068</td>
+        <td>Payment Gateway</td>
+        <td>948 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>10,841</td>
+      </tr>
+      <tr>
+        <td>17:45:19.368</td>
+        <td>Search API</td>
+        <td>837 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>400</td>
+        <td>8,154</td>
+      </tr>
+      <tr>
+        <td>17:45:19.668</td>
+        <td>Payment Gateway</td>
+        <td>244 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,436</td>
+      </tr>
+      <tr>
+        <td>17:45:19.968</td>
+        <td>Search API</td>
+        <td>1514 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,582</td>
+      </tr>
+      <tr>
+        <td>17:45:20.268</td>
+        <td>Payment Gateway</td>
+        <td>951 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,691</td>
+      </tr>
+      <tr>
+        <td>17:45:20.568</td>
+        <td>Home Page</td>
+        <td>367 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,583</td>
+      </tr>
+      <tr>
+        <td>17:45:20.868</td>
+        <td>Search API</td>
+        <td>1566 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,012</td>
+      </tr>
+      <tr>
+        <td>17:45:21.168</td>
+        <td>Payment Gateway</td>
+        <td>530 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,049</td>
+      </tr>
+      <tr>
+        <td>17:45:21.468</td>
+        <td>Payment Gateway</td>
+        <td>403 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>500</td>
+        <td>5,677</td>
+      </tr>
+      <tr>
+        <td>17:45:21.768</td>
+        <td>Search API</td>
+        <td>452 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>400</td>
+        <td>3,813</td>
+      </tr>
+      <tr>
+        <td>17:45:22.068</td>
+        <td>Home Page</td>
+        <td>412 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,495</td>
+      </tr>
+      <tr>
+        <td>17:45:22.368</td>
+        <td>Payment Gateway</td>
+        <td>556 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,038</td>
+      </tr>
+      <tr>
+        <td>17:45:22.668</td>
+        <td>Home Page</td>
+        <td>416 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>4,275</td>
+      </tr>
+      <tr>
+        <td>17:45:22.968</td>
+        <td>Home Page</td>
+        <td>69 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,912</td>
+      </tr>
+      <tr>
+        <td>17:45:23.268</td>
+        <td>Home Page</td>
+        <td>749 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>1,863</td>
+      </tr>
+      <tr>
+        <td>17:45:23.568</td>
+        <td>Payment Gateway</td>
+        <td>1027 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,821</td>
+      </tr>
+      <tr>
+        <td>17:45:23.868</td>
+        <td>Login</td>
+        <td>1685 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,095</td>
+      </tr>
+      <tr>
+        <td>17:45:24.168</td>
+        <td>Login</td>
+        <td>339 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,855</td>
+      </tr>
+      <tr>
+        <td>17:45:24.468</td>
+        <td>Checkout</td>
+        <td>1522 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,067</td>
+      </tr>
+      <tr>
+        <td>17:45:24.768</td>
+        <td>Home Page</td>
+        <td>1789 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,202</td>
+      </tr>
+      <tr>
+        <td>17:45:25.068</td>
+        <td>Home Page</td>
+        <td>72 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,412</td>
+      </tr>
+      <tr>
+        <td>17:45:25.368</td>
+        <td>Search API</td>
+        <td>690 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,341</td>
+      </tr>
+      <tr>
+        <td>17:45:25.668</td>
+        <td>Search API</td>
+        <td>216 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,285</td>
+      </tr>
+      <tr>
+        <td>17:45:25.968</td>
+        <td>Checkout</td>
+        <td>1616 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>10,015</td>
+      </tr>
+      <tr>
+        <td>17:45:26.268</td>
+        <td>Payment Gateway</td>
+        <td>728 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,348</td>
+      </tr>
+      <tr>
+        <td>17:45:26.568</td>
+        <td>Search API</td>
+        <td>1931 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,659</td>
+      </tr>
+      <tr>
+        <td>17:45:26.868</td>
+        <td>Search API</td>
+        <td>653 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>3,616</td>
+      </tr>
+      <tr>
+        <td>17:45:27.168</td>
+        <td>Payment Gateway</td>
+        <td>1636 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,470</td>
+      </tr>
+      <tr>
+        <td>17:45:27.468</td>
+        <td>Checkout</td>
+        <td>323 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,490</td>
+      </tr>
+      <tr>
+        <td>17:45:27.768</td>
+        <td>Login</td>
+        <td>83 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>8,598</td>
+      </tr>
+      <tr>
+        <td>17:45:28.068</td>
+        <td>Home Page</td>
+        <td>2000 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,646</td>
+      </tr>
+      <tr>
+        <td>17:45:28.368</td>
+        <td>Home Page</td>
+        <td>190 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>6,922</td>
+      </tr>
+      <tr>
+        <td>17:45:28.668</td>
+        <td>Payment Gateway</td>
+        <td>1031 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,504</td>
+      </tr>
+      <tr>
+        <td>17:45:28.968</td>
+        <td>Login</td>
+        <td>1842 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>7,302</td>
+      </tr>
+      <tr>
+        <td>17:45:29.268</td>
+        <td>Search API</td>
+        <td>1984 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>2,113</td>
+      </tr>
+      <tr>
+        <td>17:45:29.568</td>
+        <td>Checkout</td>
+        <td>358 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>9,773</td>
+      </tr>
+      <tr>
+        <td>17:45:29.868</td>
+        <td>Search API</td>
+        <td>915 ms</td>
+        <td><span class="status-success">SUCCESS</span></td>
+        <td>200</td>
+        <td>5,810</td>
+      </tr>
+      <tr>
+        <td>17:45:30.168</td>
+        <td>Checkout</td>
+        <td>1821 ms</td>
+        <td><span class="status-error">ERROR</span></td>
+        <td>500</td>
+        <td>5,929</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+</body>
+</html>
